@@ -1,0 +1,22 @@
+<div class="login h-full">
+    <div class="custom-container logo"><img src="assets/images/logo.png"></div>
+    <div class="flex flex-column justify-content-center align-items-center login__container">
+        <h1>Login</h1>
+        <h2>Login to Klimatool</h2>
+    
+        <form class="login__form" [formGroup]="loginForm">
+            <input pInputText type="text" placeholder="Username" formControlName="username">
+            <input pInputText type="password" placeholder="Password" formControlName="password">   
+    
+            <div class="flex justify-content-between w-full">
+                <div class="login__form-group">
+                    <p-checkbox name="remember_me" formControlName="isRememberMe" [binary]="true" value="true"  inputId="rememberMe"></p-checkbox>
+                    <label for="rememberMe">Remember me</label>
+                </div>
+                <p>Forgotten Password?</p>
+            </div>
+    
+            <p-button styleClass="p-button-rounded" (click)="getLoginFormValue()">Log in</p-button>
+        </form>
+    </div>
+</div>

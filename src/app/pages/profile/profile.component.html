@@ -1,0 +1,36 @@
+<div class="profile">
+    <div class="card">
+        <div class="profile__actions">
+            <h1 class="card__title">Personal Information</h1>
+            <div class="profile__actions-item">
+                <i class="pi pi-pencil" *ngIf="!isEditForm" (click)="isEditForm = true"></i>
+                <i class="pi pi-times" *ngIf="isEditForm" (click)="isEditForm = false"></i>
+            </div>
+        </div>
+
+        <div class="profile__form" *ngIf="isEditForm">
+            <div class="flex gap-5">
+                <input pInputText type="text" placeholder="First Name*" class="w-full">
+                <input pInputText type="text" placeholder="Last Name*" class="w-full">
+            </div>
+            <input pInputText type="text" placeholder="Business E-mail Address*">
+            <input pInputText type="text" placeholder="Company Name*">
+            <input pInputText type="text" placeholder="Tax Number*">
+            <input pInputText type="number" placeholder="Phone Number*">
+            <input pInputText type="text" placeholder="Job title">
+            <p-dropdown [options]="organizations" optionLabel="name" name="country" placeholder="Organisation type*"> </p-dropdown>
+            <p-button styleClass="p-button-rounded">Save</p-button>
+        </div>
+
+        <div class="profile__form" *ngIf="!isEditForm">
+            <p><span>First Name: </span>Testing Information</p>
+            <p><span>Last Name: </span>Testing Information</p>
+            <p><span>Business E-mail Address: </span>Testing Information</p>
+            <p><span>Company Name: </span>Testing Information</p>
+            <p><span>Tax Number: </span>Testing Information</p>
+            <p><span>Phone Number: </span>Testing Information</p>
+            <p><span>Job title: </span>Testing Information</p>
+            <p><span>Organizations: </span>Testing Information</p>
+        </div>
+    </div>
+</div>

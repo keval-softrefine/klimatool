@@ -1,0 +1,12 @@
+<div class="flex flex-column">
+    <div class="layout">
+        <app-sidebar *ngIf="!hideSidebar"></app-sidebar>
+        <div class="w-full" [class.h-full]="!hideSidebar">
+            <app-header  *ngIf="!hideSidebar"></app-header>
+            <div class="layout__content" [class.p-0]="hideSidebar">
+                <router-outlet (activate)="onRouteChange($event)"></router-outlet>
+            </div>
+        </div>
+    </div>
+    <app-footer *ngIf="!hideSidebar"></app-footer>
+</div>

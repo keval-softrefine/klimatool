@@ -1,0 +1,129 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import '/src/app/shared/variables/variables';
+@import "primeicons/primeicons.css";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'DM Sans', sans-serif;
+    background-color: #FAF9FB;
+    color: $text-color;
+}
+
+.plus-jakarta-sans {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.custom-container {
+    margin: 0 100px;
+}
+
+
+//prime-ng element customization
+.p-inputtext{
+    border-radius: 4px !important;
+    padding:0 11px !important;
+    color: #666;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 38px; 
+}
+
+.p-inputtext:enabled:hover,
+.p-dropdown:not(.p-disabled):hover {
+    border-color: $primary;
+}
+.p-inputtext:enabled:focus,
+.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus,
+.p-dropdown:not(.p-dropdown-disabled).p-focus {
+    box-shadow: none;
+}
+
+.p-checkbox .p-checkbox-box.p-highlight,
+.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover {
+    background: $primary;
+    border-color: $primary;
+}
+
+.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box:hover {
+    border-color: $primary;
+}
+
+.p-dropdown{
+    width: 100% !important;
+}
+
+.p-checkbox .p-checkbox-box {
+    border-radius: 2px;
+}
+
+.p-button{
+    background: $primary;
+    border: none;
+    &:enabled:hover,
+    .p-button:enabled:active {
+        background: $primary-light;
+        border: none;
+    }
+    &:focus {
+        box-shadow: none;
+    }
+}
+.p-radiobutton .p-radiobutton-box.p-highlight,
+.p-radiobutton .p-radiobutton-box.p-highlight:not(.p-disabled):hover
+.p-radiobutton .p-radiobutton-box.p-highlight:not(.p-disabled).p-focus,
+.p-radiobutton .p-radiobutton-box.p-highlight:not(.p-disabled):hover{
+    border-color: #D9D9D9;
+    background: transparent;
+    box-shadow: none;
+}
+.p-radiobutton .p-radiobutton-box:not(.p-disabled):not(.p-highlight):hover {
+    border-color: $primary;
+}
+
+.p-radiobutton .p-radiobutton-box .p-radiobutton-icon {
+    background-color: $primary;
+}
+
+
+.p-multiselect-panel .p-multiselect-header {
+    display: none;
+}
+.p-multiselect {
+    height: 42px;
+}
+.custom-slider {
+    .p-slider .p-slider-range {
+        background: linear-gradient(90deg, #FF0C0C 0%, #FAD005 74.73%, #81C561 112.77%);
+        border-radius: 6px;
+    }
+    .p-slider .p-slider-handle,
+    .p-slider:not(.p-disabled) .p-slider-handle:hover,
+    .p-slider .p-slider-handle:focus {
+        border: none;
+        background: #AAC942;
+        box-shadow: none;
+    }
+}
+
+//card 
+.card {
+    width: 100%;
+    border-radius: 10px;
+    padding: 28px;
+    background: #FFF;
+    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.05);
+
+    &__title {
+        color: #191919;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 27px;
+        letter-spacing: -0.36px;
+    }
+}

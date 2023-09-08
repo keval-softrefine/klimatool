@@ -1,0 +1,29 @@
+.profile {
+    .card {
+        width: 600px;
+    }
+    &__form {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap:30px;
+
+        span {
+            font-weight: 500;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-item {
+            display: flex;
+            gap: 30px;
+            i {
+                cursor: pointer;
+            }
+        }
+    }
+}

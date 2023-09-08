@@ -1,0 +1,42 @@
+<div class="container flex justify-content-center">
+    <div class="container__left">
+        <img src="assets/images/logo.png" class="logo">
+        <div class="container__heading">
+            <h1>Create Account</h1>
+            <span>To start assessing your assets using KlimaTool,<br> you need to create an account.</span>
+        </div>
+        <form class="container__form" [formGroup]="signUpForm">
+            <div class="flex gap-5">
+                <input pInputText type="text" placeholder="First Name*" class="w-full" formControlName="firstName">
+                <input pInputText type="text" placeholder="Last Name*" class="w-full" formControlName="lastName">
+            </div>
+            <input pInputText type="text" placeholder="Business E-mail Address*" formControlName="businessEmail">
+            <input pInputText type="text" placeholder="Company Name*" formControlName="companyName">
+            <input pInputText type="text" placeholder="Tax Number*" formControlName="taxNumber">
+            <input pInputText type="text" placeholder="Phone Number*" formControlName="phoneNumber">
+            <input pInputText type="text" placeholder="Job title"
+            formControlName="jobTitle">
+            <p-dropdown [options]="organizations" optionLabel="name" name="country" placeholder="Organisation type*" 
+            (onChange)="getOrganizations($event)"></p-dropdown>
+            <div class="container__action">
+                <div class="container__status">
+                    <p-checkbox name="agreedStatus" value="true" formControlName="isAgree" [binary]="true" inputId="status"></p-checkbox>
+                    <label for="status">I agree to Privacy policy</label>
+                </div>
+                <p-button styleClass="p-button-rounded" (click)="getFormValue()">Sign Up</p-button>
+            </div>    
+        </form>
+    </div>
+    <div class="container__right">
+        <div class="container__right-child">
+            <div class="heading">Lorem ipsum dolor sit amet, consectetur</div>
+            <div class="info-text">adipiscing elit. Mauris blandit congue dictum. Maecenas tristique leo non neque blandit, ac auctor erat efficitur. Integer magna sapien, vestibulum nec pellentesque vel, elementum id erat. Pellentesque sodales arcu ut diam ornare consectetur.</div>
+    
+            <div class="sub-heading">Cras posuere, mauris id scelerisque porta,</div>
+    
+            <div class="info-text"> tellus sapien varius orci, id bibendum enim erat maximus dolor. Donec ac euismod mauris, vel elementum felis. Maecenas vel sapien quis magna pharetra rhoncus. Nam eget urna ex. Aliquam erat volutpat. Vestibulum augue ipsum, sagittis eu volutpat quis, euismod ac ante. Maecenas in facilisis tellus.</div>
+    
+            <div class="info-text">Maecenas eleifend odio sit amet ante malesuada, quis sodales velit sodales. Vivamus lobortis ligula id arcu pulvinar, dapibus tempus libero ultricies. Donec nec lacinia ante. Mauris tempor pellentesque placerat. Donec eu consequat turpis.</div>
+        </div>
+    </div>  
+</div>

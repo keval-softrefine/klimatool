@@ -1,0 +1,46 @@
+@import '../.../../../shared/variables/variables';
+
+.logo {
+    padding-top: 48px;
+}
+
+.login {
+    background: #fff;
+    &__container {
+        margin-top: 180px;
+        color: $text-color;
+        h1 {
+            font-size: 40px;
+            font-weight: 500;
+            margin-bottom: 21px;
+        }
+
+        h2 {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 47px;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 37px;
+
+        input {
+            width: 450px;
+        }
+
+        &-group {
+            label {
+                margin-left: 17px;
+            }
+        }
+
+        button {
+            margin: 54px auto 0;
+            padding: 14px 80px;
+        }
+    }
+}

@@ -1,0 +1,268 @@
+<div class="dashboard plus-jakarta-sans">
+    <h1 class="dashboard__title">Klimatsko poročilo</h1>
+
+    <div class="company__card">
+        <div class="card company__card-item">
+            <h1 class="card__title">Lorem Ipsum d.o.o.</h1>
+            <div class="company__card-item--container">
+                <div class="company__card-item--content">
+                    <p>Panoga:</p>
+                    <strong>Sed volutpat sit amet quam ut al</strong>
+                </div>
+                <div class="company__card-item--content">
+                    <p>Davčna številka:</p>
+                    <strong>126483749340</strong>
+                </div>
+                <div class="company__card-item--content">
+                    <p>Naslov podjetja:</p>
+                    <strong>it Quisque ligula turpis, 1234  commodo</strong>
+                </div>
+                <p>Quisque ligula turpis, commodo eget tortoo mmodo eget tortor. </p>
+            </div>
+        </div>
+
+        <div class="card company__card-item">
+            <div class="company__card-item-rating card-header">
+                <h1 class="card__title ">Ocena podjetja</h1>
+                <p-button>AA</p-button>
+            </div>
+            <strong>Lorem Ipsum d.o.o.</strong>
+            <p>Sed volutpat sit amet quam ut aliquam. Quisque ligula turpis, commodo eget tortor. Sed volutpat sit amet quam ut aliquam. Quisque ligula turpis, commodo eget tortor.</p>
+            <div class="slider custom-slider">
+                <p-slider [(ngModel)]="value" value="80"></p-slider>
+            </div>
+            <div class="company__card-item--foter">
+                <p>Datum: 23. 03. 2023</p>
+                <p>68,5%</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h1 class="card__title">Executive Summary</h1>
+        <div class="summary">
+            <ul>
+                <li>Sed volutpat sit amet quam ut aliquam.</li>
+                <li>Sed volutpat sit amet quam ut aliquam. Quisque ligula turpis, commodo eget tortor. Sed volutpat sit amet quam ut aliquam. Quisque ligula turpis, commodo eget tortor.</li>
+                <li>Sed volutpat sit amet quam ut aliquam. Quisque ligula turpis, commodo eget tortor. Sed volutpat sit amet quam ut aliquam.</li>
+                <li>Sed volutpat sit amet quam ut aliquam. Quisque ligula turpis, commodo eget tortor. Sed volutpat sit amet quam ut aliquam.</li>
+                <li>Sed volutpat sit amet quam ut aliquam. Quisque ligula turpis, commodo eget tortor. Sed volutpat sit amet quam ut aliquam. Quisque ligula turpis, commodo eget tortor.</li>
+                <li>Sed volutpat sit amet quam ut aliquam. Quisque ligula turpis, commodo eget tortor. Sed volutpat sit amet quam ut aliquam.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card assessment__card">
+        <div class="card-header">
+            <h1 class="card__title">Skupna ocena okoljskega tveganja</h1>
+            <div class="assessment__card-options">
+                <div class="flex align-items-center">
+                    <p-radioButton name="radio" value="Povprečje vseh panog" [(ngModel)]="radioValue" inputId="radio_one"></p-radioButton>
+                    <label for="radio_one" class="ml-2">Povprečje vseh panog</label>
+                </div>
+                <div class="flex align-items-center">
+                    <p-radioButton name="radio" value="Ista panoga" [(ngModel)]="radioValue" inputId="radio_two"></p-radioButton>
+                    <label for="radio_two" class="ml-2">Ista panoga</label>
+                </div>
+                <div class="card-dropdown">
+                    <p-multiSelect [options]="options_multiselect" optionLabel="name" [filter]="false"></p-multiSelect>
+                </div>
+            </div>
+        </div>
+        <div>
+            <highcharts-chart 
+                [Highcharts]="highcharts" 
+                [options]="config" style=
+                    "width: 100%; 
+                    height: 500px; 
+                    display: flex;
+                    margin-top: 47px;">
+                </highcharts-chart>
+        </div>
+    </div>
+
+    <div class="card overview__card">
+        <div class="card-header">
+            <h1 class="card__title">Pregled ocen po glavnih tveganjih</h1>
+            <i class="pi pi-chevron-up" style="font-size: 1.4rem"></i>
+        </div>
+
+        <div class="card-header">
+            <p class="card-header-subtext">Izpostavljenost x ranljivost po kanalih vpliva</p>
+            <div class="card-dropdown">
+                <p-dropdown [options]="options_one" optionLabel="name" name="options_one"></p-dropdown>
+                <p-dropdown [options]="options_two" optionLabel="name" name="options_two"></p-dropdown>
+            </div>
+        </div>
+
+        <div class="overview__card-table card-table">
+            <p-table [value]="data" [tableStyle]="{ 'min-width': '50rem' }">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Fizična tveganja</th>
+                        <th>Makrookolje</th>
+                        <th>Dobavitelji/ dobava</th>
+                        <th>Procesi/ lokacija/ kadri</th>
+                        <th>Trgi / stranke/ dostava</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-goal>
+                    <tr>
+                        <td>{{ goal.title }}</td>
+                        <td>
+                            <p>{{goal?.value1?.text}}</p>
+                            <div class="overview__card-table--slider custom-slider">
+                                <p-slider [(ngModel)]="goal.value1.value"></p-slider>
+                            </div>
+                        </td>
+                        <td>
+                            <p>{{goal?.value2?.text}}</p>
+                            <div class="overview__card-table--slider custom-slider">
+                                <p-slider [(ngModel)]="goal.value2.value"></p-slider>
+                            </div>
+                        </td>
+                        <td>
+                            <p>{{goal?.value3?.text}}</p>
+                            <div class="overview__card-table--slider custom-slider">
+                                <p-slider [(ngModel)]="goal.value3.value"></p-slider>
+                            </div>
+                        </td>
+                        <td>
+                            <p>{{goal?.value4?.text}}</p>
+                            <div class="overview__card-table--slider custom-slider">
+                                <p-slider [(ngModel)]="goal.value4.value"></p-slider>
+                            </div>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+
+    <div class="card review__card">
+        <div class="card-header">
+            <h1 class="card__title">Pregled kritičnih dogodkov zadnjih let</h1>
+            <i class="pi pi-chevron-up" style="font-size: 1.4rem"></i>
+        </div>
+
+        <div class="card-header review__card-dropdowns">
+            <p class="card-header-subtext">Lorem ipsum dolor sit amet</p>
+            <div class="card-dropdown">
+                <p-dropdown [options]="options_three" optionLabel="name" name="options_three"></p-dropdown>
+                <p-dropdown [options]="options_four" optionLabel="name" name="options_four"></p-dropdown>
+                <p-dropdown [options]="options_five" optionLabel="name" name="options_five"></p-dropdown>
+            </div>
+            <div class="review__card-items">
+                <p>Dogodek</p>
+                <p>Poplave meteorne vode</p>
+            </div>
+            <div class="review__card-items">
+                <p>Datum</p>
+                <p>22. 08. 2022</p>
+            </div>
+            <div class="review__card-items">
+                <p>Lokacija</p>
+                <p>Kletni prostori upravnega poslopja na Trubadurjevi ulici</p>
+            </div>
+            <div class="review__card-items">
+                <p>Posledice</p>
+                <p>Brez posledic za proizvodne procese</p>
+            </div>
+            <div class="review__card-items">
+                <p>Intervencija</p>
+                <p>Gasilci</p>
+            </div>
+            <div class="review__card-items">
+                <p>Ocena škode</p>
+                <p>Odprava škode 7.000 evrov</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card goal__card">
+        <div class="card-header">
+            <h1 class="card__title">Skladnost z UN Sustainable development goals</h1>
+            <i class="pi pi-chevron-up" style="font-size: 1.4rem"></i>
+        </div>
+
+        <div class="goal__card-item">
+            <h1>7.3:</h1>
+            <img src="../../../assets/images/clean_energy.png" alt="">
+            <p>Do leta 2030 podvojite svetovno stopnjo izboljšanja energetske učinkovitosti</p>
+        </div>
+
+        <div class="goal__card-item">
+            <h1>11.3:</h1>
+            <img src="../../../assets/images/communities.png" alt="">
+            <p>Do leta 2030 okrepiti vključujočo in trajnostno urbanizacijo ter zmogljivosti za sodelovanje,celostno in trajnostno načrtovanje in upravljanje človeških naselij v vseh državah.</p>
+        </div>
+
+        <div class="goal__card-item">
+            <h1>13.1:</h1>
+            <img src="../../../assets/images/climate_action.png" alt="">
+            <p>Okrepiti odpornost in sposobnost prilagajanja na nevarnosti, povezane s podnebjemin naravne nesreče v vseh državah.</p>
+        </div>
+
+        <p class="goal__card-footer">Opomba: Sustainable Fitch ocenjuje ustrezne cilje ZN o trajnostnem razvoju na ravni instrumentov z upoštevanjem neposrednih prispevkov iz uporabe prihodkov.</p>
+    </div>
+    
+    <div class="card bond__card">
+        <div class="card-header">
+            <h1 class="card__title">Skladnost z EU Green Bond Standards</h1>
+            <i class="pi pi-chevron-up" style="font-size: 1.4rem"></i>
+        </div>
+
+        <div class="bond__card-table card-table">
+            <p-table [value]="bond" [tableStyle]="{ 'min-width': '50rem' }">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Fizična tveganja</th>
+                        <th>Bistveno prispeva</th>
+                        <th>Bistveno škoduje</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-bond>
+                    <tr>
+                        <td>{{ bond.title }}</td>
+                        <td>
+                            <i class="pi pi-check" *ngIf="bond?.significant_contribution"></i>
+                            <i class="pi pi-times" *ngIf="bond?.significant_damage"></i>
+                        </td>
+                        <td>
+                            <i class="pi pi-check" *ngIf="bond?.significant_contribution"></i>
+                            <i class="pi pi-times" *ngIf="bond?.significant_damage"></i>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+            <div class="bond__card-item">
+                <p>Lorem Ipsum d.o.o.</p>
+                <div class="bond__card-item-options">
+                    <p class="font-semibold">IZPOLNJUJE</p>
+                    <span>/</span>
+                    <p>NE IZPOLNJUJE</p>
+                </div>
+                <p>vse minimalne zaščitne ukrepe glede človekovih pravic, pravic delavcev itd.</p>
+            </div>
+
+            <div class="bond__card-item">
+                <p>Lorem Ipsum d.o.o.</p>
+                <div class="bond__card-item-options">
+                    <p>IZPOLNJUJE</p>
+                    <span>/</span>
+                    <p class="font-semibold">NE IZPOLNJUJE</p>
+                </div>
+                <p>vsa tehnična merila glede vsega zgoraj naštetega.</p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <h1 class="card__title">Priloge</h1>
+        <div class="attachments">
+            <div class="attachments__item" *ngFor="let attachment of attachments">
+                <span class="attachments__item-title">{{attachment.title}}</span>
+                <span class="attachments__item-icon"><i class="pi pi-download"></i></span>
+            </div>
+        </div>
+    </div>
+</div>

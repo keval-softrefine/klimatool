@@ -1,0 +1,17 @@
+@import '../../variables/variables';
+
+.footer {
+    background-color: $primary-light;
+    padding: 12px;
+    &__links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        a {
+            text-decoration: none;
+            line-height: 32px;
+            color: #fff;
+        }
+    }
+}
